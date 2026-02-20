@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>flakebelly - Press</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #080808;
+  --bg-card: #141311;
+  --text: #c8c0b0;
+  --text-dim: #7a7468;
+  --text-bright: #e8e0d0;
+  --accent: #b8943e;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', -apple-system, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+}
+body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+::selection { background: var(--accent); color: var(--bg); }
+a { color: var(--accent); text-decoration: none; transition: color 0.3s; }
+a:hover { color: var(--text-bright); }
+
+.container { max-width: 900px; margin: 0 auto; padding: 6rem 2rem 4rem; }
+
+.back-link {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 3rem;
+}
+.back-link:hover { color: var(--text-bright); }
+
+.page-title {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 300;
+  color: var(--text-bright);
+  margin-bottom: 1rem;
+}
+.page-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  margin-bottom: 3rem;
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+.section-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+}
+
+/* Download cards */
+.downloads {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.download-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 1.2rem 1.5rem;
+  transition: border-color 0.3s;
+}
+.download-card:hover { border-color: rgba(184,148,62,0.2); }
+.download-info h3 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text-bright);
+  margin-bottom: 0.3rem;
+}
+.download-info p {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+.download-btn {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.5rem 1.2rem;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+.download-btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Photo grid */
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.photo-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.photo-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s;
+}
+.photo-card:hover img { transform: scale(1.03); }
+.photo-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(8,8,8,0.9));
+  display: flex;
+  justify-content: flex-end;
+}
+.photo-card-overlay a {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.usage-note {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  padding: 1rem 1.5rem;
+  border-left: 2px solid var(--accent);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+footer p {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 600px) {
+  .photo-grid { grid-template-columns: 1fr; }
+  .photo-card img { height: 250px; }
+  .download-card { flex-direction: column; gap: 1rem; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <a href="../" class="back-link">&larr; Back to flakebelly.com</a>
+
+  <h1 class="page-title">Press</h1>
+  <p class="page-subtitle">Press materials for flakebelly. For inquiries, interviews, or promo requests, email <a href="mailto:flakebelly@flakebelly.com">flakebelly@flakebelly.com</a>.</p>
+
+  <p class="section-label">Documents</p>
+  <div class="downloads">
+    <div class="download-card">
+      <div class="download-info">
+        <h3>C-PTSD - Press Release</h3>
+        <p>New album announcement - out 15th May 2026 (PDF)</p>
+      </div>
+      <a href="flakebelly_CPTSD_press_release.pdf" class="download-btn" download>Download</a>
+    </div>
+    <div class="download-card">
+      <div class="download-info">
+        <h3>flakebelly - Press Kit</h3>
+        <p>Bio, press quotes, discography, and contact info (PDF)</p>
+      </div>
+      <a href="flakebelly_press_kit.pdf" class="download-btn" download>Download</a>
+    </div>
+  </div>
+
+  <p class="section-label">Press Photos</p>
+  <div class="photo-grid">
+    <div class="photo-card">
+      <img src="flakebelly-press-photo-1.jpg" alt="flakebelly press photo">
+      <div class="photo-card-overlay">
+        <a href="flakebelly-press-photo-1.jpg" download>Download full size &darr;</a>
+      </div>
+    </div>
+    <div class="photo-card">
+      <img src="flakebelly-press-photo-2.jpg" alt="flakebelly press photo">
+      <div class="photo-card-overlay">
+        <a href="flakebelly-press-photo-2.jpg" download>Download full size &darr;</a>
+      </div>
+    </div>
+    <div class="photo-card">
+      <img src="flakebelly-press-photo-3.jpg" alt="flakebelly press photo">
+      <div class="photo-card-overlay">
+        <a href="flakebelly-press-photo-3.jpg" download>Download full size &darr;</a>
+      </div>
+    </div>
+    <div class="photo-card">
+      <img src="flakebelly-press-photo-4.png" alt="flakebelly press photo">
+      <div class="photo-card-overlay">
+        <a href="flakebelly-press-photo-4.png" download>Download full size &darr;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="usage-note">
+    All photos may be used freely for editorial coverage of flakebelly's music. Credit is appreciated but not required. For high-resolution versions or alternative shots, email <a href="mailto:flakebelly@flakebelly.com">flakebelly@flakebelly.com</a>.
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 flakebelly. All rights reserved. Western Isles, Scotland.</p>
+</footer>
+
+</body>
+</html>
