@@ -106,17 +106,18 @@ nav.scrolled { background: rgba(8,8,8,0.97); backdrop-filter: blur(12px); }
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to bottom, rgba(8,8,8,0.4) 0%, rgba(8,8,8,0.8) 70%, var(--bg) 100%);
+  background: linear-gradient(to bottom, rgba(8,8,8,0.6) 0%, rgba(8,8,8,0.85) 70%, var(--bg) 100%);
 }
 .hero-content { position: relative; z-index: 2; }
 .hero-subtitle {
   font-size: 0.7rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--text-dim);
+  color: var(--accent);
   margin-bottom: 2rem;
   opacity: 0;
   animation: fadeUp 1s 0.3s ease forwards;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.8);
 }
 .hero-title {
   font-family: var(--serif);
@@ -128,16 +129,18 @@ nav.scrolled { background: rgba(8,8,8,0.97); backdrop-filter: blur(12px); }
   margin-bottom: 1.5rem;
   opacity: 0;
   animation: fadeUp 1s 0.5s ease forwards;
+  text-shadow: 0 2px 30px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.5);
 }
 .hero-tagline {
   font-family: var(--serif);
   font-size: clamp(1rem, 2.5vw, 1.35rem);
   font-weight: 300;
   font-style: italic;
-  color: var(--text-dim);
+  color: var(--text);
   max-width: 600px;
   opacity: 0;
   animation: fadeUp 1s 0.7s ease forwards;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.8);
 }
 .hero-scroll {
   position: absolute;
