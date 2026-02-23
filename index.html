@@ -594,8 +594,8 @@ footer p {
     </div>
 
     <div class="about-images">
-      <img src="images/artist-typewriter.jpg" alt="flakebelly at the typewriter">
-      <img src="images/artist-guitar-outside.jpg" alt="flakebelly playing guitar, Outer Hebrides">
+      <img src="images/artist-typewriter.png" alt="flakebelly at the typewriter">
+      <img src="images/artist-guitar-outside.png" alt="flakebelly playing guitar, Outer Hebrides">
     </div>
   </div>
 </section>
@@ -736,7 +736,7 @@ footer p {
     <p class="section-label">Contact</p>
     <div class="divider"></div>
     <!-- UPDATE: Replace with your actual email -->
-    <a href="/cdn-cgi/l/email-protection#fc9a909d97999e99909085bc9a909d97999e99909085d29f9391" class="contact-email"><span class="__cf_email__" data-cfemail="fa9c969b919f989f969683ba9c969b919f989f969683d4999597">[email&#160;protected]</span></a>
+    <a href="mailto:flakebelly@flakebelly.com" class="contact-email">flakebelly@flakebelly.com</a>
     <p style="margin-bottom: 2.5rem;"><a href="press/" style="font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent);">Press Photos &amp; Materials &rarr;</a></p>
     <div class="contact-links">
       <a href="https://flakebelly.bandcamp.com/" target="_blank" title="Bandcamp">
@@ -771,8 +771,20 @@ footer p {
   <p>&copy; 2026 flakebelly. All rights reserved. Western Isles, Scotland.</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visibl
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+reveals.forEach(el => observer.observe(el));
+
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
+
+</body>
+</html>
