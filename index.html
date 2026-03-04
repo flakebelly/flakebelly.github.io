@@ -3,89 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>fBox Audio — Coming Soon</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Source+Sans+3:wght@300;400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<title>fBox — Coming Soon</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg-deep:#0E0E0E;
-  --border-subtle:#3A3835;
-  --gold:#C4A265;--gold-dim:#9A7E4E;
-  --cream:#F0E4CF;--cream-dim:#B8AE9A;--cream-faint:#8A8276;
-  --font-display:'Playfair Display',Georgia,serif;
-  --font-body:'Source Sans 3','Segoe UI',sans-serif;
-  --font-mono:'JetBrains Mono','Consolas',monospace;
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%}
-body{
-  font-family:var(--font-body);
-  background:var(--bg-deep);
-  color:var(--cream-dim);
-  font-weight:300;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  -webkit-font-smoothing:antialiased;
-  overflow:hidden;
-}
-body::before{
-  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.025;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size:256px 256px;
-}
-body::after{
-  content:'';position:fixed;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse 60% 50% at 50% 45%,rgba(196,162,101,.05) 0%,transparent 70%);
-}
-.rule{position:fixed;left:0;right:0;height:1px;background:var(--border-subtle)}
-.rule-top{top:0}.rule-bottom{bottom:0}
-main{
-  position:relative;z-index:1;
-  display:flex;flex-direction:column;align-items:center;
-  padding:2rem;flex:1;justify-content:center;
-}
-.logo{
-  width:110px;height:110px;border-radius:18px;
-  margin-bottom:2.5rem;
-  box-shadow:0 0 60px rgba(196,162,101,.1),0 20px 40px rgba(0,0,0,.4);
-  animation:fadeInScale 1.2s ease-out;
-}
-.overline{
-  font-family:var(--font-mono);font-size:.72rem;
-  letter-spacing:.2em;text-transform:uppercase;
-  color:var(--gold-dim);margin-bottom:1rem;
-  animation:fadeInUp 1s ease-out .2s both;
-}
-h1{
-  font-family:var(--font-display);
-  font-size:clamp(3rem,8vw,5rem);
-  font-weight:400;color:var(--cream);
-  letter-spacing:.04em;margin-bottom:.2em;
-  animation:fadeInUp 1s ease-out .3s both;
-}
-h1 .f{color:var(--gold)}
-.tagline{
-  font-family:var(--font-display);font-style:italic;
-  font-size:clamp(1rem,2.5vw,1.3rem);
-  color:var(--cream-faint);margin-bottom:2.5rem;
-  animation:fadeInUp 1s ease-out .4s both;
-}
-.divider{
-  width:40px;height:1px;background:var(--gold-dim);
-  margin:0 auto 2.5rem;
-  animation:fadeInUp 1s ease-out .5s both;
-}
-.body-text{
-  font-size:1rem;color:var(--cream-dim);
-  margin-bottom:2rem;
-  animation:fadeInUp 1s ease-out .6s both;
-}
-.contact{
-  font-family:var(--font-mono);font-size:.82rem;
-  letter-spacing:.08em;color:var(--gold);
-  text-decoration:none;
-  border-bottom:1px
+  body {
+    margin: 0;
+    background: #0E0E0E;
+    color: #B8AE9A;
+    font-family: Georgia, serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+  }
+  .logo {
+    width: 110px;
+    height: 110px;
+    border-radius: 18px;
+    margin-bottom: 2rem;
+  }
+  .overline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .72rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #9A7E4E;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 400;
+    color: #F0E4CF;
+    letter-spacing: .04em;
+    margin-bottom: .2em;
+  }
+  h1 .f { color: #C4A265; }
+  .tagline {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: #8A8276;
+    margin-bottom: 2.5rem;
+  }
+  .body-text {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .contact {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .82rem;
+    letter-spacing: .08em;
+    color: #C4A265;
+    text-decoration: none;
+  }
+  .contact:hover { color: #D4B87A; }
+  footer {
+    margin-top: 4rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .7rem;
+    color: #8A8276;
+    opacity: .5;
+  }
+</style>
+</head>
+<body>
+  <img src="fbox_logo.png" alt="fBox" class="logo">
+  <p class="overline">Virtual Analogue Studio Ecosystem</p>
+  <h1><span class="f">f</span>Box</h1>
+  <p class="tagline">VST3 Plugins &amp; Console Environment</p>
+  <p class="body-text">Official launch coming soon.</p>
+  <a href="mailto:fboxaudio@gmail.com" class="contact">fboxaudio@gmail.com</a>
+  <footer>&copy; 2026 fBox. All rights reserved.</footer>
+</body>
+</html>
