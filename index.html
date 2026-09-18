@@ -1,3 +1,78 @@
+
+Claude finished the response
+Ran 6 commands, read 2 files, shared files
+fBox now has its own feature section on your flakebelly page, straight after the hero, where a new album would go:
+
+New - Out Now at the top, then a large console screenshot that links to fboxaudio.com.
+The fBox Audio title with a gold "f", your story, the one-of-a-kind line, and two buttons: Visit fboxaudio.com and Get fMeter free.
+fBox in gold as the first item in the menu, which jumps to the section.
+fBox Audio as the first icon in the contact links at the bottom.
+Nothing else on the page was changed. They're ordinary links, so Google follows them from flakebelly.com to fboxaudio.com, which helps the new site get found. As on fboxaudio.com, the fBox names are never shown in capitals.
+
+To put it live on GitHub, the zip holds two things, and both need to go up:
+
+Open your site's repository on github.com and click Add file, then Upload files.
+Drag in index.html and the whole images folder from the zip. The new images/fbox-console.jpg goes in alongside your existing images, and index.html replaces the old one.
+Click Commit changes. GitHub Pages usually updates within a minute or two.
+The screenshot is the standalone console with "What The Thunder Said" loaded on the channels, so your own song appears in the fBox feature.
+
+
+Flakebelly site fbox
+ZIP 
+
+Index
+Code·HTML 
+"The new images/fbox-console.jpg" what?
+
+Explaining the location of an image file reference.
+Explaining the location of an image file reference.
+It's the picture of the console that shows at the top of the new fBox section. The page expects to find it inside your site's images folder, the same folder that already holds your album covers. If it's not there, the page shows a broken image instead of the console.
+
+When you unzip the file, you'll see two things:
+
+index.html, which is the page itself
+a folder called images with one picture inside it, fbox-console.jpg
+To put them on GitHub:
+
+Open your site's repository on github.com, click into the images folder, then click Add file, then Upload files. Drag in fbox-console.jpg and click Commit changes.
+Go back to the main page of the repository (the top level, where index.html is), click Add file, then Upload files, drag in the new index.html, and click Commit changes.
+That's it: the picture goes in with your other images, and the page replaces the old one.
+
+sowhy do o ahave indxeds paewtly too? wjhich one fod i need the zxipped ot the other?
+
+They're the same file. The separate index.html is only a copy, in case you wanted to look at it without unzipping.
+
+Use the zip: it has everything you need, the index.html page and the images folder with the console picture. You can ignore the separate one.
+
+that cnfiusing m,ate
+
+Fair enough, sorry. From now on I'll give you just one thing to download each time. For this job, use the zip and ignore the separate file.
+
+if it sjst 2 fiels why the fiuckl are ythwe in a zip??
+
+Clarifying whether zipping the image file is truly needed.
+Clarifying whether zipping the image file is truly needed.
+Honestly, no good reason. I zipped them to keep the picture inside an images folder, but you're uploading it on GitHub anyway, so the zip just adds a step. Here are the two files on their own:
+
+Ran a command, shared files
+fbox-console.jpg goes into the images folder on GitHub.
+index.html goes into the top level, replacing the old one.
+Ignore the zip.
+
+
+Index
+Code·HTML 
+
+Fbox console
+Image·JPG 
+
+Write a message…
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+
+
+Index · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +85,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
 :root {
   --bg: #080808;
   --bg-raised: #0f0f0e;
@@ -23,9 +98,9 @@
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans: 'DM Sans', -apple-system, sans-serif;
 }
-
+ 
 html { scroll-behavior: smooth; }
-
+ 
 body {
   background: var(--bg);
   color: var(--text);
@@ -34,7 +109,7 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
 }
-
+ 
 body::after {
   content: '';
   position: fixed;
@@ -43,12 +118,12 @@ body::after {
   pointer-events: none;
   z-index: 9999;
 }
-
+ 
 ::selection { background: var(--accent); color: var(--bg); }
-
+ 
 a { color: var(--accent); text-decoration: none; transition: color 0.3s; }
 a:hover { color: var(--text-bright); }
-
+ 
 /* Navigation */
 nav {
   position: fixed;
@@ -81,7 +156,7 @@ nav.scrolled { background: rgba(8,8,8,0.97); backdrop-filter: blur(12px); }
 .nav-links a:hover { color: var(--text-bright); }
 .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
 .menu-toggle span { display: block; width: 22px; height: 1.5px; background: var(--text); margin: 5px 0; transition: 0.3s; }
-
+ 
 /* Hero */
 .hero {
   min-height: 100vh;
@@ -163,7 +238,7 @@ nav.scrolled { background: rgba(8,8,8,0.97); backdrop-filter: blur(12px); }
   background: linear-gradient(to bottom, var(--text-dim), transparent);
   margin: 0.8rem auto 0;
 }
-
+ 
 /* Sections */
 section { padding: 6rem 2rem; }
 .container { max-width: 900px; margin: 0 auto; }
@@ -182,7 +257,43 @@ section { padding: 6rem 2rem; }
   line-height: 1.2;
   margin-bottom: 2rem;
 }
-
+ 
+/* fBox Audio feature */
+.fbox-feature {
+  text-align: center;
+  background: radial-gradient(ellipse at 50% 35%, rgba(184,148,62,0.08) 0%, rgba(184,148,62,0) 60%), var(--bg);
+  border-bottom: 1px solid rgba(184,148,62,0.1);
+  padding: 6rem 2rem;
+}
+.fbox-shot {
+  display: block;
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+  border: 1px solid rgba(184,148,62,0.2);
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.fbox-shot:hover { border-color: rgba(184,148,62,0.5); transform: translateY(-2px); }
+.fbox-shot img { display: block; width: 100%; height: auto; }
+.fbox-title {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  font-weight: 400;
+  color: var(--text-bright);
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+.fbox-title .f, .fbox-name .f { color: var(--accent); }
+.fbox-note {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  margin-bottom: 0;
+}
+.btn.btn-case { text-transform: none; letter-spacing: 0.08em; font-size: 0.8rem; }
+.nav-links a.nav-fbox { text-transform: none; letter-spacing: 0.08em; font-size: 0.85rem; color: var(--accent); }
+.nav-links a.nav-fbox:hover { color: var(--text-bright); }
+ 
 /* Upcoming Album */
 .upcoming {
   text-align: center;
@@ -251,7 +362,7 @@ section { padding: 6rem 2rem; }
   flex-wrap: wrap;
   margin-top: 2.5rem;
 }
-
+ 
 /* Featured Release */
 .featured {
   background: var(--bg);
@@ -311,7 +422,7 @@ section { padding: 6rem 2rem; }
 .btn-primary:hover { background: var(--text-bright); color: var(--bg); }
 .btn-outline { background: transparent; border: 1px solid var(--text-dim); color: var(--text); }
 .btn-outline:hover { border-color: var(--text-bright); color: var(--text-bright); }
-
+ 
 /* About */
 .about-text {
   font-size: 1.05rem;
@@ -320,7 +431,7 @@ section { padding: 6rem 2rem; }
 }
 .about-text p { margin-bottom: 1.5rem; }
 .about-text em { color: var(--text-bright); font-style: italic; }
-
+ 
 .about-images {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -334,7 +445,7 @@ section { padding: 6rem 2rem; }
   object-fit: cover;
   border: 1px solid rgba(255,255,255,0.04);
 }
-
+ 
 /* Discography */
 .disc-grid {
   display: grid;
@@ -391,7 +502,7 @@ section { padding: 6rem 2rem; }
   text-transform: uppercase;
   color: var(--accent);
 }
-
+ 
 /* Press */
 .press-quotes { margin-top: 2rem; }
 .press-quote {
@@ -416,7 +527,7 @@ section { padding: 6rem 2rem; }
   text-transform: uppercase;
   color: var(--text-dim);
 }
-
+ 
 /* Listen */
 .players {
   margin-top: 3rem;
@@ -437,7 +548,7 @@ section { padding: 6rem 2rem; }
   margin-bottom: 0.8rem;
 }
 .player-embed iframe { width: 100%; border: 0; }
-
+ 
 /* Contact */
 .contact {
   text-align: center;
@@ -469,7 +580,7 @@ section { padding: 6rem 2rem; }
 }
 .contact-links a svg { opacity: 0.7; transition: opacity 0.3s; }
 .contact-links a:hover svg { opacity: 1; }
-
+ 
 /* Footer */
 footer {
   text-align: center;
@@ -481,7 +592,7 @@ footer p {
   color: var(--text-dim);
   letter-spacing: 0.1em;
 }
-
+ 
 /* Divider */
 .divider {
   width: 40px;
@@ -489,7 +600,7 @@ footer p {
   background: var(--accent-dim);
   margin: 0 auto 2rem;
 }
-
+ 
 /* Animations */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -501,7 +612,7 @@ footer p {
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
-
+ 
 /* Responsive */
 @media (max-width: 768px) {
   .nav-links { display: none; }
@@ -525,20 +636,21 @@ footer p {
   .about-images { grid-template-columns: 1fr; }
   .about-images img { height: 250px; }
 }
-
+ 
 @media (max-width: 480px) {
   .disc-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
-
+ 
 <nav id="nav">
   <a href="#" class="nav-logo">flakebelly</a>
   <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links">
+    <li><a href="#fbox" class="nav-fbox" onclick="document.querySelector('.nav-links').classList.remove('open')">fBox</a></li>
     <li><a href="#about" onclick="document.querySelector('.nav-links').classList.remove('open')">About</a></li>
     <li><a href="#new-album" onclick="document.querySelector('.nav-links').classList.remove('open')">New Album</a></li>
     <li><a href="#diving-bell" onclick="document.querySelector('.nav-links').classList.remove('open')">Diving Bell</a></li>
@@ -547,7 +659,7 @@ footer p {
     <li><a href="#contact" onclick="document.querySelector('.nav-links').classList.remove('open')">Contact</a></li>
   </ul>
 </nav>
-
+ 
 <!-- Hero -->
 <section class="hero">
   <div class="hero-bg"></div>
@@ -558,7 +670,30 @@ footer p {
   </div>
   <div class="hero-scroll">Scroll</div>
 </section>
-
+ 
+<!-- fBox Audio -->
+<section class="fbox-feature" id="fbox">
+  <div class="container reveal">
+    <p class="section-label">New - Out Now</p>
+    <a href="https://fboxaudio.com" class="fbox-shot" target="_blank" rel="noopener">
+      <img src="images/fbox-console.jpg" alt="fBox Console, the 32-channel analogue-modelled mixing desk by fBox Audio" loading="lazy">
+    </a>
+    <p class="upcoming-date">A virtual analogue studio from the Outer Hebrides</p>
+    <h2 class="fbox-title"><span class="f">f</span>Box Audio</h2>
+    <p class="upcoming-desc">
+      For years flakebelly wanted a proper analogue console - the kind that made the records he grew up on. Living on a Scottish island, with a spare room already full of old Japanese mixers and tape machines, it was never going to happen. So he built his own. fBox is the studio he couldn't have, built for everyone who couldn't have it either: a 32-channel console with its own 16-track tape machine, a rack for the plugins you already own, nine processors and a free meter, all shaped by the same dusty vintage gear, tape, and transistor you hear running through these records.
+    </p>
+    <p class="upcoming-desc">
+      Every instance has its own serial number and its own sound. No two are the same. Find one you love and it's yours alone.
+    </p>
+    <p class="fbox-note">VST3 for Windows. Free 14-day trials on everything, and fMeter is free for good.</p>
+    <div class="upcoming-actions">
+      <a href="https://fboxaudio.com" class="btn btn-primary btn-case" target="_blank" rel="noopener">Visit fboxaudio.com</a>
+      <a href="https://fboxaudio.com/downloads.html#fmeter" class="btn btn-outline btn-case" target="_blank" rel="noopener">Get fMeter free</a>
+    </div>
+  </div>
+</section>
+ 
 <!-- New Album -->
 <section class="upcoming" id="new-album">
   <div class="container reveal">
@@ -571,11 +706,11 @@ footer p {
     <p class="upcoming-desc">
       Built from drums outwards - each track's rhythm recorded before anything else was written. Warped pianos, guitars, loops, and fragments layered on top, pushed through dusty vintage gear, tape, and transistor until the sound collapsed into grit and decay. Vinyl fragments, ambient recordings, and sampled vocals folded into the fabric. The voice is deliberately de-centred - whispered, pitch-shifted, spoken, shouted, chanted, rapped - one element among many. Slow drone pieces sit alongside glitch-driven instability, shaped by texture and colour rather than convention. Experimental indie, psych-jazz, art-rock, tape collage, hip hop production. Deliberately irregular, defiantly human, almost lo-fi. It breathes, wobbles, distorts, and sometimes fails.
     </p>
-
+ 
     <div style="max-width:650px;margin:2.5rem auto">
       <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=4260439485/size=large/bgcol=0f0f0e/linkcol=b8943e/tracklist=false/artwork=small/track=4210598986/transparent=true/" seamless><a href="https://flakebelly.bandcamp.com/album/c-ptsd">C-PTSD by flakebelly</a></iframe>
     </div>
-
+ 
     <div style="max-width:650px;margin:2.5rem auto 0">
       <div class="press-quote" style="padding:1.5rem 0;border-top:1px solid rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.04)">
         <blockquote>"An album of cut-up electronica ... Unsettling, shifting palettes that remain accessible and even danceable at points."</blockquote>
@@ -586,7 +721,7 @@ footer p {
         <cite>122 Music Management</cite>
       </div>
     </div>
-
+ 
     <p class="upcoming-desc" style="color: var(--text-dim); font-style: italic;">
       Available now on CD and digital download.
     </p>
@@ -596,7 +731,7 @@ footer p {
     </div>
   </div>
 </section>
-
+ 
 <!-- Featured: The Boy In The Diving Bell -->
 <section class="featured" id="diving-bell">
   <div class="container">
@@ -622,7 +757,7 @@ footer p {
     </div>
   </div>
 </section>
-
+ 
 <!-- About -->
 <section id="about">
   <div class="container reveal">
@@ -631,27 +766,27 @@ footer p {
       <p>From the windswept landscapes of the Outer Hebrides, flakebelly shapes songs that wander between psychedelic indie rock, folk-jazz, and the ever-changing soundscapes of imagination. His music evolves in style and texture with each project, guided by a self-contained ethos that allows sound, tone, and method to develop freely.</p>
       
       <p>His track <em>In Parks Of Tall Trees</em> found its way to Tom Robinson's BBC 6 Music Introducing Mixtape. From first picking up a guitar in the late 90s and stumbling through formative songs in the early 2000s, flakebelly's path has been one of constant diversion and reinvention.</p>
-
+ 
       <p>Early singles collections - <em>The Orkney Tapes</em> (2022) and <em>The Christmas Morning Outcome</em> (2023) - were restless, experimental documents of sound-searching, sketchbooks where ideas were tested, broken apart, and pieced together again in pursuit of a voice. Those experiments fed directly into the indie-folk EP <em>Behaviours</em> (2022), the rough-edged <em>Lo Fidelity</em> (2024), and the kaleidoscopic album <em>Apprentice Green</em> (2024).</p>
-
+ 
       <p>True to his solitary instincts, flakebelly writes, records, and produces everything from his home studio in the Western Isles. The result is music that feels lived-in and handmade - always evolving, never fixed, and forever searching for new shapes in the sound.</p>
     </div>
-
+ 
     <div class="about-images">
       <img src="images/artist-typewriter.png" alt="flakebelly at the typewriter">
       <img src="images/artist-guitar-outside.png" alt="flakebelly playing guitar, Outer Hebrides">
     </div>
   </div>
 </section>
-
+ 
 <!-- Discography -->
 <section id="music" style="background: var(--bg-raised); border-top: 1px solid rgba(255,255,255,0.03);">
   <div class="container reveal">
     <p class="section-label">Discography</p>
     <h2 class="section-heading">Releases</h2>
-
+ 
     <div class="disc-grid">
-
+ 
       <a href="https://flakebelly.bandcamp.com/album/the-boy-in-the-diving-bell" target="_blank" class="disc-card" style="text-decoration:none;">
         <div class="disc-card-img"><img src="images/diving-bell-cover.png" alt="The Boy In The Diving Bell"></div>
         <div class="disc-card-body">
@@ -661,7 +796,7 @@ footer p {
           <span class="disc-link">Listen &rarr;</span>
         </div>
       </a>
-
+ 
       <a href="https://flakebelly.bandcamp.com/album/apprentice-green" target="_blank" class="disc-card" style="text-decoration:none;">
         <div class="disc-card-img"><img src="images/apprentice-green-cover.png" alt="Apprentice Green"></div>
         <div class="disc-card-body">
@@ -671,7 +806,7 @@ footer p {
           <span class="disc-link">Listen &rarr;</span>
         </div>
       </a>
-
+ 
       <a href="https://flakebelly.bandcamp.com/album/lo-fidelity" target="_blank" class="disc-card" style="text-decoration:none;">
         <div class="disc-card-img"><img src="images/lo-fidelity-cover.png" alt="Lo Fidelity EP"></div>
         <div class="disc-card-body">
@@ -681,7 +816,7 @@ footer p {
           <span class="disc-link">Listen &rarr;</span>
         </div>
       </a>
-
+ 
       <a href="https://flakebelly.bandcamp.com/album/behaviours" target="_blank" class="disc-card" style="text-decoration:none;">
         <div class="disc-card-img"><img src="images/behaviours-cover.png" alt="Behaviours"></div>
         <div class="disc-card-body">
@@ -691,7 +826,7 @@ footer p {
           <span class="disc-link">Listen &rarr;</span>
         </div>
       </a>
-
+ 
       <a href="https://flakebelly.bandcamp.com/album/the-christmas-morning-outcome-2023-singles" target="_blank" class="disc-card" style="text-decoration:none;">
         <div class="disc-card-img"><img src="images/christmas-morning-cover.png" alt="The Christmas Morning Outcome"></div>
         <div class="disc-card-body">
@@ -701,7 +836,7 @@ footer p {
           <span class="disc-link">Listen &rarr;</span>
         </div>
       </a>
-
+ 
       <a href="https://flakebelly.bandcamp.com/album/the-orkney-tapes-2022-singles" target="_blank" class="disc-card" style="text-decoration:none;">
         <div class="disc-card-img"><img src="images/orkney-tapes-cover.png" alt="The Orkney Tapes"></div>
         <div class="disc-card-body">
@@ -711,38 +846,38 @@ footer p {
           <span class="disc-link">Listen &rarr;</span>
         </div>
       </a>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <!-- Press -->
 <section id="press">
   <div class="container reveal">
     <p class="section-label">Press</p>
     <h2 class="section-heading">Words</h2>
-
+ 
     <div class="press-quotes">
       <div class="press-quote">
         <blockquote>"Extensive and wildly eclectic sonic adventures."</blockquote>
         <cite>Tom Robinson - BBC 6 Music</cite>
       </div>
-
+ 
       <div class="press-quote">
         <blockquote>"He delves into the canvas of humanity and emerges with gleaming treasures, glinting in the sunlight."</blockquote>
         <cite>Sinusoidal Music</cite>
       </div>
-
+ 
       <div class="press-quote">
         <blockquote>"Ultimately the sort of artist we need more of - a genuine weirdo-auteur carving his own path purely for the love of the game."</blockquote>
         <cite>Lewis Wade - Is This Music?</cite>
       </div>
-
+ 
       <div class="press-quote">
         <blockquote>"Like being Alice in Wonderland, transported through a maze of moments in flakebelly's imagination."</blockquote>
         <cite>Marianne Tambini - SNACK Magazine</cite>
       </div>
-
+ 
       <div class="press-quote">
         <blockquote>"The timeless technicolour psychedelia of Syd Barrett and the alternative lo-fi mastery of Elliott Smith."</blockquote>
         <cite>Press Review</cite>
@@ -750,7 +885,7 @@ footer p {
     </div>
   </div>
 </section>
-
+ 
 <!-- Listen -->
 <section style="background: var(--bg-raised); border-top: 1px solid rgba(255,255,255,0.03);">
   <div class="container reveal">
@@ -759,30 +894,30 @@ footer p {
     <p style="color: var(--text-dim); margin-bottom: 2rem; font-size: 0.95rem;">
       Available on Bandcamp, SoundCloud, and all major streaming platforms except Spotify.
     </p>
-
+ 
     <div class="players">
       <div class="player-embed">
         <p class="player-label">The Boy In The Diving Bell</p>
         <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2027597490&color=%23b8943e&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
       </div>
-
+ 
       <div class="player-embed">
         <p class="player-label">Apprentice Green</p>
         <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1852666518&color=%23b8943e&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
       </div>
-
+ 
       <div class="player-embed">
         <p class="player-label">The Christmas Morning Outcome: 2023 Singles</p>
         <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1814823612&color=%23b8943e&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
       </div>
     </div>
-
+ 
     <p style="text-align: center; margin-top: 3rem;">
       <a href="https://flakebelly.bandcamp.com/" class="btn btn-outline" target="_blank">Full Discography on Bandcamp</a>
     </p>
   </div>
 </section>
-
+ 
 <!-- Contact -->
 <section class="contact" id="contact">
   <div class="container reveal">
@@ -792,6 +927,10 @@ footer p {
     <a href="mailto:flakebelly@flakebelly.com" class="contact-email">flakebelly@flakebelly.com</a>
     <p style="margin-bottom: 2.5rem;"><a href="press/" style="font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent);">Press Photos &amp; Materials &rarr;</a></p>
     <div class="contact-links">
+      <a href="https://fboxaudio.com" target="_blank" rel="noopener" title="fBox Audio">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="4"/></svg>
+        <span style="text-transform: none; letter-spacing: 0.1em;">fBox Audio</span>
+      </a>
       <a href="https://flakebelly.bandcamp.com/" target="_blank" title="Bandcamp">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M0 18.75l7.437-13.5H24l-7.438 13.5z"/></svg>
         <span>Bandcamp</span>
@@ -819,11 +958,11 @@ footer p {
     </div>
   </div>
 </section>
-
+ 
 <footer>
   <p>&copy; 2026 flakebelly. All rights reserved. Western Isles, Scotland.</p>
 </footer>
-
+ 
 <script>
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
@@ -832,12 +971,21 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 reveals.forEach(el => observer.observe(el));
-
+ 
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 50);
 });
 </script>
-
+ 
 </body>
 </html>
+ 
+
+
+
+
+
+
+
+
