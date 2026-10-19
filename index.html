@@ -258,6 +258,8 @@ section { padding: 6rem 2rem; }
   line-height: 1.5;
 }
 .fbox-plugins.fbox-main { grid-template-columns: repeat(2, 1fr); margin-bottom: 0; }
+.fbox-plugin.fbox-centre { grid-column: 2; }
+@media (max-width: 768px) { .fbox-plugin.fbox-centre { grid-column: auto; } }
 .fbox-caption {
   font-size: 0.75rem;
   letter-spacing: 0.08em;
@@ -704,6 +706,10 @@ footer p {
       <a href="https://fboxaudio.com/plugins/drone.html" class="fbox-plugin" target="_blank" rel="noopener">
         <span class="fbox-name"><span class="f">f</span>Drone</span>
         <span class="fbox-what">A gnarly drone synth, signal mangler and ring modulator</span>
+      </a>
+      <a href="https://fboxaudio.com/plugins/meter.html" class="fbox-plugin fbox-centre" target="_blank" rel="noopener">
+        <span class="fbox-name"><span class="f">f</span>Meter</span>
+        <span class="fbox-what">Free for good: VU, PPM and loudness metering, plus an app that checks finished files</span>
       </a>
     </div>
 
