@@ -257,6 +257,12 @@ section { padding: 6rem 2rem; }
   color: var(--text-dim);
   line-height: 1.5;
 }
+.fbox-plugins.fbox-main { grid-template-columns: repeat(2, 1fr); margin-bottom: 0; }
+.fbox-caption {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  margin: -1.6rem 0 2.5rem;
+}
 @media (max-width: 768px) { .fbox-plugins { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 480px) { .fbox-plugins { grid-template-columns: 1fr; } }
 
@@ -644,16 +650,24 @@ footer p {
     <a href="https://fboxaudio.com/plugins/console.html" class="fbox-shot" target="_blank" rel="noopener">
       <img src="images/fbox-console.jpg" alt="fBox Console, the 32-channel analogue-modelled mixing desk by fBox Audio" loading="lazy">
     </a>
+    <p class="fbox-caption"><a href="https://fboxaudio.com/plugins/console.html" target="_blank" rel="noopener"><span class="f">f</span>Box Console &rarr;</a></p>
     <p class="upcoming-date">A virtual analogue studio from the Outer Hebrides</p>
     <h2 class="fbox-title"><span class="f">f</span>Box</h2>
     <p class="upcoming-desc">
       For years I wanted a proper analogue console - the kind that made the records I grew up on. Living on a Scottish island, with a spare room already full of old Japanese mixers and tape machines, it was never going to happen. So I built my own, and then the studio around it, all shaped by the same dusty vintage gear, tape, and transistor you hear running through my records.
     </p>
-    <p class="upcoming-desc">
-      <a href="https://fboxaudio.com/plugins/console.html" target="_blank" rel="noopener"><span class="fbox-name" style="display:inline;font-size:1.15rem;"><span class="f">f</span>Box Console</span></a> is the centrepiece: a 32-channel desk with its own 16-track tape machine, as a plugin or a standalone app. <a href="https://fboxaudio.com/plugins/rack.html" target="_blank" rel="noopener"><span class="fbox-name" style="display:inline;font-size:1.15rem;"><span class="f">f</span>Box Rack</span></a> puts a console channel and mix bus around any plugins you already own.
-    </p>
+    <div class="fbox-plugins fbox-main">
+      <a href="https://fboxaudio.com/plugins/console.html" class="fbox-plugin" target="_blank" rel="noopener">
+        <span class="fbox-name"><span class="f">f</span>Box Console</span>
+        <span class="fbox-what">A 32-channel desk with its own 16-track tape machine, as a plugin or standalone app</span>
+      </a>
+      <a href="https://fboxaudio.com/plugins/rack.html" class="fbox-plugin" target="_blank" rel="noopener">
+        <span class="fbox-name"><span class="f">f</span>Box Rack</span>
+        <span class="fbox-what">A console channel and mix bus around any plugins you already own</span>
+      </a>
+    </div>
 
-    <p class="fbox-sub">Plus nine plugins. Use one, or use them all.</p>
+    <p class="fbox-sub">And nine plugins. Use one, or use them all.</p>
     <div class="fbox-plugins">
       <a href="https://fboxaudio.com/plugins/comp.html" class="fbox-plugin" target="_blank" rel="noopener">
         <span class="fbox-name"><span class="f">f</span>Comp</span>
